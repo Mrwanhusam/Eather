@@ -69,6 +69,16 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
 /* زرار السلة العائم المخصص للموبايل */
 #floating-cart-btn { display: none; }
 
+/* Size chart as a drop-down inside the product modal */
+.sc{margin-top:18px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.sc summary{cursor:pointer;font-weight:600;padding:12px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.sc summary::-webkit-details-marker{display:none}
+.sc summary::after{content:"+";font-size:20px;line-height:1}
+.sc[open] summary::after{content:"−"}
+.sc table{margin:4px 0 12px;font-size:12px}
+.sc th,.sc td{padding:6px 4px}
+.sc .note{padding-bottom:12px}
+
 @media(max-width:760px){
   .hero .row,.inc,.pd{grid-template-columns:1fr}
   nav,#cb,#wa{display:none!important}
@@ -192,7 +202,8 @@ function open(id){const p=P.find(x=>x.id==id);let sz="M";
 $("#modal").innerHTML=`<button class="x" data-close>×</button><div class="pd"><div>${gallery(p)}</div><div><h2 style="font-size:40px">${p.n}</h2><p>${price(p.u)} · ${p.g} · Oversized, boxy fit</p>
 <label>Size</label><div class="sizes">${SZ.map(([s])=>`<button data-s="${s}" class="${s==sz?"on":""}">${s}</button>`).join("")}</div>
 <div class="box"><label for="mw">Weight (kg) for size help</label><input id="mw" type="number" placeholder="85"><p class="note" id="mr"></p></div>
-<button class="btn" id="add">Add to cart</button><br><br><b>Size chart</b>${chart(p)}</div></div>`;
+<button class="btn" id="add">Add to cart</button>
+<details class="sc"><summary>Size chart</summary>${chart(p)}</details></div></div>`;
 show("#modal");
 $("#modal").onclick=e=>{const b=e.target.closest("[data-s]");if(b){sz=b.dataset.s;document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x==b))}
 if(e.target.id=="add"){const k=cart.find(i=>i.id==id&&i.s==sz);k?k.q++:cart.push({id,s:sz,q:1});upd();hide();toast("Added to cart")}};
