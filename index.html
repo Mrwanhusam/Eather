@@ -205,7 +205,7 @@ $("#modal").innerHTML=`<button class="x" data-close>×</button><div class="pd"><
 <label>Size</label><div class="sizes">${SZ.map(([s])=>`<button data-s="${s}" class="${s==sz?"on":""}">${s}</button>`).join("")}</div>
 <div class="box"><label for="mw">Weight (kg) for size help</label><input id="mw" type="number" placeholder="85"><p class="note" id="mr"></p></div>
 <button class="btn" id="add">Add to cart</button>
-<details class="sc"><summary>Size chart</summary>${chart(p)}</details></div></div>`;
+<a class="btn o sc-link" href="size-chart.html${p.c=="Pants"?"#pants":p.c=="Hoodies"?"#hoodies":""}" style="margin-top:18px">View size chart</a></div></div>`;
 show("#modal");
 $("#modal").onclick=e=>{const b=e.target.closest("[data-s]");if(b){sz=b.dataset.s;document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x==b))}
 if(e.target.id=="add"){const k=cart.find(i=>i.id==id&&i.s==sz);k?k.q++:cart.push({id,s:sz,q:1});upd();hide();toast("Added to cart")}};
