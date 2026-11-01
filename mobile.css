@@ -3,7 +3,7 @@ html,body{overflow-x:hidden;-webkit-text-size-adjust:100%}
 *{-webkit-tap-highlight-color:transparent}
 input,select,textarea{font-size:16px}            /* stops iPhone zoom when typing */
 button,.btn{min-height:44px}
-.x{width:44px;height:44px}
+.x{width:32px;height:32px;font-size:16px;line-height:1;padding:0;font-weight:400}
 
 /* زرار السلة العائم مخفي تماماً على أجهزة الكمبيوتر */
 #floating-cart-btn { display: none; }
@@ -65,7 +65,7 @@ button,.btn{min-height:44px}
   .gallery img{width:88%}
   .sizes button{min-width:52px;min-height:48px;font-size:16px}
   #modal table{display:block;overflow-x:auto;white-space:nowrap;font-size:13px}
-  #add{position:fixed;left:0;right:0;bottom:0;z-index:35;width:100%;padding:16px 16px calc(16px + env(safe-area-inset-bottom));border:0;border-top:1px solid var(--ink)}
+  #add{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));z-index:35;width:calc(100% - 8vw);max-width:340px;padding:13px 16px;border:1px solid var(--ink);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 6px 18px rgba(0,0,0,.2)}
   .inc{gap:10vw}
   footer{flex-direction:column}
   #toast{bottom:84px;max-width:90vw;text-align:center}
