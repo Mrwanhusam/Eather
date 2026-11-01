@@ -42,7 +42,9 @@ table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid 
 .panel.on{display:block}
 #cart{top:0;right:0;bottom:0;width:min(440px,100%);padding:24px;border-left:1px solid var(--ink)}
 #modal{inset:4vh 4vw;border:1px solid var(--ink);padding:28px}
-.x{float:right;background:none;border:1px solid var(--ink);width:36px;height:36px;font-size:18px}
+.x{float:right;background:var(--w);border:1px solid var(--ink);width:36px;height:36px;font-size:18px}
+#modal .x{position:absolute;top:12px;right:12px;z-index:5;float:none}
+#modal{position:fixed}
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
 .sizes{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 16px}
 .sizes button{border:1px solid var(--ink);background:none;min-width:48px;padding:9px}.sizes .on{background:var(--ink);color:var(--w)}
@@ -60,7 +62,7 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 
 /* إضافات الـ Gallery للصور المتعددة */
-.gallery { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.gallery { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; max-width: 100%; }
 .gallery img { width: 100%; aspect-ratio: 4/5; object-fit: cover; flex-shrink: 0; scroll-snap-align: start; background: var(--g2); }
 .gallery::-webkit-scrollbar { height: 6px; }
 .gallery::-webkit-scrollbar-thumb { background: var(--ink); }
