@@ -7,9 +7,9 @@
 const P = [
   {
     id: 1,
-    n: "Block Heavy Tee",
+    n: "TEST",
     c: "Tees",
-    u: 1200,
+    u: 1,
     g: "320 GSM",
     imgs: [
       "images/tee1-front.jpg",
@@ -19,20 +19,20 @@ const P = [
   },
   {
     id: 2,
-    n: "Slab Tee",
+    n: "TEST",
     c: "Tees",
-    u: 1300,
-    g: "340 GSM",
+    u: 1,
+    g: "320 GSM",
     imgs: [
       "images/tee2.jpg"
     ]
   },
   {
     id: 3,
-    n: "Test Hoodie",
+    n: "Test",
     c: "Hoodies",
-    u: 800,
-    g: "480 GSM",
+    u: 1,
+    g: "320 GSM",
     imgs: [
       "images/hoodie face.jpg",
       "images/hoodie back.jpg",
@@ -41,19 +41,19 @@ const P = [
   },
   {
     id: 4,
-    n: "Void Hoodie",
+    n: "TEST",
     c: "Hoodies",
-    u: 2600,
-    g: "480 GSM",
+    u: 1,
+    g: "320 GSM",
     imgs: [
       "images/hoodie2.jpg"
     ]
   },
   {
     id: 5,
-    n: "Frame Sweatpant",
+    n: "TEST",
     c: "Pants",
-    u: 2100,
+    u: 1,
     g: "450 GSM",
     imgs: [
       "images/pant1.jpg"
@@ -61,9 +61,9 @@ const P = [
   },
   {
     id: 6,
-    n: "Grid Cargo",
+    n: "TEST",
     c: "Pants",
-    u: 2300,
+    u: 1,
     g: "12 oz twill",
     imgs: [
       "images/pant2.jpg"
@@ -71,9 +71,9 @@ const P = [
   },
   {
     id: 7,
-    n: "Axis Jacket",
+    n: "TEST",
     c: "Outerwear",
-    u: 3600,
+    u: 1,
     g: "14 oz canvas",
     imgs: [
       "images/jacket.jpg"
@@ -81,10 +81,10 @@ const P = [
   },
   {
     id: 8,
-    n: "Shell Crewneck",
+    n: "TEST",
     c: "Hoodies",
-    u: 2200,
-    g: "450 GSM",
+    u: 1,
+    g: "320 GSM",
     imgs: [
       "images/crewneck.jpg"
     ]
