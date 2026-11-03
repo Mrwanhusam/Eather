@@ -6,7 +6,8 @@ const CODES = {
   "FAM20": { pct: 20, once: true, min: 1200 },
   "FAMI20": { pct: 20, once: false },
   "FAMIL30": { pct: 30, once: false },
-  "FAMILY50": { pct: 50, once: false }
+  "FAMILY50": { pct: 50, once: false },
+  "BAKRY10": { pct: 10, min: 800 }
 };
 // 2. دوال الحساب والتأكد من شروط الكود
 function calcDiscount(def, sub, sh) {
