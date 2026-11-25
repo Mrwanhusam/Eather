@@ -28,4 +28,145 @@ main{padding:24px 4vw;max-width:1100px;margin:0 auto}
 @media(max-width:760px){.ord{grid-template-columns:1fr}}
 </style><style id="admin-premium">
 body{-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.top{border-
+.top{border-bottom:1px solid #E5E5E5;padding:18px 4vw}
+.logo{font-weight:700;font-stretch:112%;letter-spacing:.32em;font-size:16px}
+.top small{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:#666}
+.btn{background:none;color:#000;border:1px solid #E5E5E5;padding:0 16px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;transition:border-color .2s,background .2s,color .2s}
+.btn:hover{border-color:#000}
+.btn.o{background:none;color:#000}
+#go{background:#000;color:#fff;border-color:#000;min-height:48px}
+#go:hover{background:#fff;color:#000}
+main{padding:40px 4vw 64px}
+.stats{border:0;background:none;gap:24px;margin-bottom:40px}
+.st{border:0;padding:0}
+.st span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:6px}
+.st b{font-stretch:100%;font-weight:300;font-size:40px;letter-spacing:-.02em}
+.bar{gap:24px;align-items:center;border-bottom:1px solid #E5E5E5;margin-bottom:24px}
+.bar button{border:0;border-bottom:1px solid transparent;padding:12px 0;margin-bottom:-1px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#666}
+.bar button:hover{color:#000}
+.bar .on{background:none;color:#000;border-bottom-color:#000}
+.bar input{border:0;border-bottom:1px solid #E5E5E5;background:none;padding:10px 0;min-width:200px;margin-left:auto;flex:0 1 280px}
+.bar input:focus{outline:0;border-bottom-color:#000}
+.ord{border:0;border-bottom:1px solid #E5E5E5;padding:22px 8px;margin:0;gap:24px;transition:background .2s;animation:rin .4s ease both}
+.ord:hover{background:#FAFAFA}
+.ord b{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.ord small{font-size:12px;margin-top:2px}
+.tot{font-stretch:100%;font-weight:400;font-size:20px;font-variant-numeric:tabular-nums}
+.ord select{border:1px solid #E5E5E5;border-radius:999px;padding:6px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.acts{gap:16px;margin-top:6px}
+.acts a,.acts .btn{flex:0 0 auto;border:0;padding:4px 0;min-height:0;font-size:11px;border-bottom:1px solid #000}
+.acts a::after{content:" →"}
+.login{border:1px solid #E5E5E5;padding:40px}
+.login h2{font-stretch:100%!important;font-weight:700!important;font-size:14px!important;letter-spacing:.32em;text-transform:uppercase}
+.login label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#666;font-weight:500}
+.login input{border:0;border-bottom:1px solid #000;padding:12px 0;font-size:16px;margin-bottom:24px}
+.login input:focus{outline:0}
+@keyframes rin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+.top small{display:none}
+.bar{gap:16px;overflow-x:auto;flex-wrap:nowrap}
+.bar button{min-height:44px;flex:0 0 auto}
+.bar input{flex:1 0 100%;margin:0 0 8px;font-size:16px}
+.ord select,.login input{font-size:16px;min-height:44px}
+.st b{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){.ord{animation:none}*{transition:none!important}}
+</style><style id="admin-charts">
+#an{display:flex;flex-direction:column;gap:16px}
+.cc{border:1px solid #E5E5E5;padding:22px;min-width:0;background:#fff;animation:rin .4s ease both}
+.cc h3{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#666;font-weight:500;margin-bottom:6px}
+.big{font-size:26px;font-weight:300;letter-spacing:-.02em;margin-bottom:16px}
+.big small{font-size:11px;color:#666;letter-spacing:.1em;margin-left:6px}
+.cols{display:flex;align-items:flex-end;gap:2px;height:80px}
+.cols i{flex:1;background:#EEE;min-height:2px}
+.cols i.v{background:#000}
+.ax{display:flex;justify-content:space-between;font-size:9px;color:#999;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.dn{display:flex;align-items:center;gap:18px;margin-top:12px}
+.ring{width:80px;height:80px;border-radius:50%;flex:0 0 80px;-webkit-mask:radial-gradient(circle,transparent 58%,#000 59%);mask:radial-gradient(circle,transparent 58%,#000 59%)}
+.lg{flex:1}.lg div{display:flex;align-items:center;gap:8px;font-size:12px;margin:5px 0}
+.lg b{width:7px;height:7px;border-radius:50%;display:inline-block}
+.lg span{color:#666;margin-left:auto}
+.hb{margin-top:14px}
+.hb div{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}
+.hb div span{color:#666;font-variant-numeric:tabular-nums}
+.hb i{display:block;height:3px;background:#F0F0F0;border-radius:3px;overflow:hidden}
+.hb i::after{content:"";display:block;height:100%;width:var(--w);background:#000}
+@media(min-width:1280px){
+#an.side{position:fixed;left:4vw;top:100px;bottom:0;width:320px;overflow-y:auto;scrollbar-width:none;padding-bottom:32px}
+#an.side::-webkit-scrollbar{display:none}
+body.has-an main{max-width:none;margin:0 4vw 0 calc(4vw + 360px);padding-left:0;padding-right:0}
+}
+@media(max-width:1279px){#an{margin:0 0 40px}}
+</style></head><body>
+<div class="top"><span class="logo">EATHER</span><small>Orders</small><span class="sp"></span><button class="btn o" id="rf">Refresh</button><button class="btn o" id="lo">Log out</button></div>
+<main id="m"></main>
+<script>
+const $=s=>document.querySelector(s),ST=["New","Paid","Shipped","Delivered","Cancelled"],COL={New:"#000000",Paid:"#2e7d32",Shipped:"#1565c0",Delivered:"#9a9a9a",Cancelled:"#c62828"};
+let TOK=localStorage.getItem("ae_tok")||"",O=[],F="All",Q="";
+const e=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=t=>parseFloat(String(t).replace(/[^\d.]/g,""))||0;
+const wa=p=>{p=String(p).replace(/\D/g,"");return"https://wa.me/"+(p.startsWith("0")?"2"+p:p)};
+const PAY={cod:"Cash on delivery",insta:"InstaPay",wallet:"E-wallet"};
+function login(err){$("#m").innerHTML=`<div class="login"><h2 style="font-stretch:75%;font-weight:800;font-size:28px;margin-bottom:14px">Sign in</h2><label>Password</label><input id="t" type="password"><button class="btn" id="go" style="width:100%">Open dashboard</button><p class="err" id="er">${e(err||"")}</p></div>`;
+$("#go").onclick=()=>{TOK=$("#t").value;load()}}
+async function load(){$("#m").innerHTML='<p id="msg">Loading…</p>';
+try{const j=await(await fetch("api/orders?token="+encodeURIComponent(TOK))).json();if(j.error)throw 0;O=j.orders.reverse();localStorage.setItem("ae_tok",TOK);draw()}
+catch(x){localStorage.removeItem("ae_tok");TOK="";login("Session expired or orders could not load. Sign in again.")}}
+function draw(){const c=s=>O.filter(o=>o.status==s).length,rev=O.filter(o=>o.status!="Cancelled").reduce((a,o)=>a+num(o.total),0);
+const L=O.filter(o=>(F=="All"||o.status==F)&&(o.name+o.id+o.phone+o.city).toLowerCase().includes(Q));
+$("#m").innerHTML=`<div class="stats"><div class="st"><span>New</span><b>${c("New")}</b></div><div class="st"><span>To ship (paid)</span><b>${c("Paid")}</b></div><div class="st"><span>Shipped</span><b>${c("Shipped")}</b></div><div class="st"><span>Revenue</span><b>${Math.round(rev).toLocaleString()}</b> EGP</div></div>
+<div class="bar">${["All",...ST].map(s=>`<button data-f="${s}" class="${s==F?"on":""}">${s}</button>`).join("")}<input id="q" placeholder="Search name, order ID, phone, city" value="${e(Q)}"></div>
+${L.map(o=>`<div class="ord"><div><b>${e(o.name)}</b><small>${e(o.id||"No ID")}</small><small>${new Date(o.date).toLocaleString("en-GB",{timeZone:"Africa/Cairo",dateStyle:"medium",timeStyle:"short"})}</small></div>
+<div>${e(o.items)}<small>${e(o.city)} · ${e(o.address)}</small><small>${e(PAY[o.pay]||o.pay)}${o.ref?" · Ref "+e(o.ref):""} · ${e(o.phone)}</small></div>
+<div><div class="tot">${e(o.total)}</div><select data-r="${o.row}">${ST.map(s=>`<option ${s==o.status?"selected":""}>${s}</option>`).join("")}</select><div class="acts">${o.receipt?`<a class="btn o" target="_blank" href="${e(o.receipt)}">Receipt</a>`:""}<a class="btn o" target="_blank" href="${wa(o.phone)}">WhatsApp</a>${/Code \S+ \(/.test(o.items)?`<button class="btn o" data-al="${o.row}" style="flex:1;font-size:13px;padding:6px 10px">Allow code again</button>`:""}</div></div></div>`).join("")||"<p>No orders here.</p>"}`;
+$("#q").oninput=x=>{Q=x.target.value.toLowerCase();const p=x.target.selectionStart;draw();$("#q").focus();$("#q").setSelectionRange(p,p)};
+document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{F=b.dataset.f;draw()});
+document.querySelectorAll("[data-r]").forEach(s=>s.onchange=async()=>{const o=O.find(x=>x.row==s.dataset.r);o.status=s.value;draw();
+await fetch("api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"status",token:TOK,row:o.row,id:o.id,status:o.status})})})}
+document.addEventListener("click",async ev=>{const b=ev.target.closest("[data-al]");if(!b)return;
+const o=O.find(x=>x.row==b.dataset.al),m=String(o.items).match(/Code (\S+) \(/);if(!m)return;
+if(!confirm("Let "+o.name+" use "+m[1]+" one more time?"))return;
+const r=await fetch("api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"allow",token:TOK,code:m[1],phone:o.phone,email:o.email})});
+alert(r.ok?"Done. This customer can use "+m[1]+" once more.":"Could not save. Try again.")});
+$("#rf").onclick=()=>TOK?load():login();
+$("#lo").onclick=()=>{localStorage.removeItem("ae_tok");TOK="";login()};
+TOK?load():login();
+</script>
+<script id="admin-charts-js">
+(function(){
+const day=d=>new Date(d).toLocaleDateString("en-CA",{timeZone:"Africa/Cairo"});
+const fmt=n=>Math.round(n).toLocaleString();
+const T=["#000","#555","#999","#C8C8C8","#E5E5E5"];
+const share=r=>{const s=r.reduce((a,x)=>a+x[1],0)||1;return r.length?r.map(x=>{const p=Math.round(x[1]/s*100);return`<div class="hb"><div>${e(x[0])}<span>${p}%</span></div><i style="--w:${p}%"></i></div>`}).join(""):'<p class="ax">No data yet</p>'};
+const top=f=>{const c={};O.forEach(o=>f(o).forEach(([k,v])=>{if(k)c[k]=(c[k]||0)+v}));return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,4)};
+function clear(){const a=document.getElementById("an");if(a)a.remove();document.body.classList.remove("has-an")}
+function charts(){
+clear();
+const s=document.querySelector(".stats");if(!s||!O.length)return;
+const ok=O.filter(o=>o.status!="Cancelled"),rev=ok.reduce((a,o)=>a+num(o.total),0),tot=O.length;
+const N=30,days=[];for(let i=N-1;i>=0;i--)days.push(day(Date.now()-i*864e5));
+const cnt=days.map(d=>O.filter(o=>day(o.date)==d).length),mx=Math.max(1,...cnt);
+const lab=d=>new Date(d+"T12:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"});
+const st=ST.map(x=>[x,O.filter(o=>o.status==x).length]).filter(r=>r[1]);
+let a=0;const grad=st.map((r,i)=>{const b=a+r[1]/tot*360,g=`${T[i]} ${a}deg ${b}deg`;a=b;return g}).join(",");
+const prod=top(o=>String(o.items).split(/,|\n|\+/).map(t=>[t.replace(/Code \S+ \(.*?\)/,"").split("/")[0].trim(),1]));
+const city=top(o=>[[String(o.city||"").trim(),1]]);
+const pay=top(o=>[[PAY[o.pay]||o.pay,1]]);
+const side=innerWidth>=1280;
+const html=`<aside id="an" class="${side?"side":""}">
+<div class="cc"><h3>Revenue · 30 days</h3><div class="big">${fmt(rev)}<small>EGP · ${tot} orders</small></div>
+<div class="cols">${cnt.map((v,i)=>`<i class="${v?"v":""}" style="height:${v?Math.max(10,v/mx*100):2}%" title="${lab(days[i])}: ${v}"></i>`).join("")}</div>
+<div class="ax"><span>${lab(days[0])}</span><span>Today</span></div></div>
+<div class="cc"><h3>Average order</h3><div class="big" style="margin:0">${fmt(ok.length?rev/ok.length:0)}<small>EGP</small></div></div>
+<div class="cc"><h3>Order status</h3><div class="dn"><div class="ring" style="background:conic-gradient(${grad})"></div><div class="lg">${st.map((r,i)=>`<div><b style="background:${T[i]}"></b>${r[0]}<span>${r[1]}</span></div>`).join("")}</div></div></div>
+<div class="cc"><h3>Top products</h3>${share(prod)}</div>
+<div class="cc"><h3>Top cities</h3>${share(city)}</div>
+<div class="cc"><h3>Payment</h3>${share(pay)}</div></aside>`;
+if(side){document.body.insertAdjacentHTML("beforeend",html);document.body.classList.add("has-an")}else s.insertAdjacentHTML("afterend",html);
+}
+const d0=draw;draw=function(){d0();charts()};
+const l0=login;login=function(x){clear();l0(x)};
+let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(charts,200)});
+charts();
+})();
+</script></body></html>
