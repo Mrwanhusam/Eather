@@ -26,6 +26,51 @@ main{padding:24px 4vw;max-width:1100px;margin:0 auto}
 .login input{width:100%;border:1px solid var(--ink);padding:10px;margin:4px 0 14px}.login label{font-size:12px;font-weight:600}
 #msg{color:var(--g);margin:8px 0}.err{color:#c62828}
 @media(max-width:760px){.ord{grid-template-columns:1fr}}
+</style><style id="admin-premium">
+body{-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.top{border-bottom:1px solid #E5E5E5;padding:18px 4vw}
+.logo{font-weight:700;font-stretch:112%;letter-spacing:.32em;font-size:16px}
+.top small{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:#666}
+.btn{background:none;color:#000;border:1px solid #E5E5E5;padding:0 16px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;transition:border-color .2s,background .2s,color .2s}
+.btn:hover{border-color:#000}
+.btn.o{background:none;color:#000}
+#go{background:#000;color:#fff;border-color:#000;min-height:48px}
+#go:hover{background:#fff;color:#000}
+main{padding:40px 4vw 64px}
+.stats{border:0;background:none;gap:24px;margin-bottom:40px}
+.st{border:0;padding:0}
+.st span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:6px}
+.st b{font-stretch:100%;font-weight:300;font-size:40px;letter-spacing:-.02em}
+.bar{gap:24px;align-items:center;border-bottom:1px solid #E5E5E5;margin-bottom:24px}
+.bar button{border:0;border-bottom:1px solid transparent;padding:12px 0;margin-bottom:-1px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#666}
+.bar button:hover{color:#000}
+.bar .on{background:none;color:#000;border-bottom-color:#000}
+.bar input{border:0;border-bottom:1px solid #E5E5E5;background:none;padding:10px 0;min-width:200px;margin-left:auto;flex:0 1 280px}
+.bar input:focus{outline:0;border-bottom-color:#000}
+.ord{border:0;border-bottom:1px solid #E5E5E5;padding:22px 8px;margin:0;gap:24px;transition:background .2s;animation:rin .4s ease both}
+.ord:hover{background:#FAFAFA}
+.ord b{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.ord small{font-size:12px;margin-top:2px}
+.tot{font-stretch:100%;font-weight:400;font-size:20px;font-variant-numeric:tabular-nums}
+.ord select{border:1px solid #E5E5E5;border-radius:999px;padding:6px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.acts{gap:16px;margin-top:6px}
+.acts a,.acts .btn{flex:0 0 auto;border:0;padding:4px 0;min-height:0;font-size:11px;border-bottom:1px solid #000}
+.acts a::after{content:" →"}
+.login{border:1px solid #E5E5E5;padding:40px}
+.login h2{font-stretch:100%!important;font-weight:700!important;font-size:14px!important;letter-spacing:.32em;text-transform:uppercase}
+.login label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#666;font-weight:500}
+.login input{border:0;border-bottom:1px solid #000;padding:12px 0;font-size:16px;margin-bottom:24px}
+.login input:focus{outline:0}
+@keyframes rin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+.top small{display:none}
+.bar{gap:16px;overflow-x:auto;flex-wrap:nowrap}
+.bar button{min-height:44px;flex:0 0 auto}
+.bar input{flex:1 0 100%;margin:0 0 8px;font-size:16px}
+.ord select,.login input{font-size:16px;min-height:44px}
+.st b{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){.ord{animation:none}*{transition:none!important}}
 </style></head><body>
 <div class="top"><span class="logo">EATHER</span><small>Orders</small><span class="sp"></span><button class="btn o" id="rf">Refresh</button><button class="btn o" id="lo">Log out</button></div>
 <main id="m"></main>
