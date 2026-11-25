@@ -6,7 +6,7 @@
 <meta property="og:title" content="EATHER — Silent Chaos"><meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ffffff;--ink:#000000;--g1:#000000;--g2:#d9d9d6;--w:#ffffff}
+:root{--bg:#FFFFFF;--ink:#000000;--g1:#666666;--g2:#E5E5E5;--w:#FFFFFF;--ac:#000000}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
 body{font:400 15px/1.5 Archivo,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
@@ -14,38 +14,62 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;padding:14px 4vw;background:var(--bg);border-bottom:1px solid var(--ink)}
 .logo{font-stretch:125%;font-weight:800;letter-spacing:.12em;font-size:20px;text-decoration:none}
 nav{display:flex;gap:18px;margin-left:auto}nav a{text-decoration:none;font-size:14px}
-nav a:hover{text-decoration:underline}
+nav a:hover{text-decoration:underline;color:var(--ac)}
 .hb{background:none;border:1px solid var(--ink);padding:6px 12px;font-size:13px}
-.hero{padding:6vw 4vw 3vw;border-bottom:1px solid var(--ink)}
-.hero h1{font-stretch:125%;font-weight:900;font-size:clamp(56px,19vw,300px);line-height:.85;letter-spacing:-.02em}
+.hero{padding:6vw 60px 3vw;border-bottom:1px solid var(--ink)}
+.hero h1{font-stretch:125%;font-weight:900;font-size:clamp(32px,calc((100vw - 120px)/5.6),280px);line-height:1;padding-top:.08em;letter-spacing:-.02em;white-space:nowrap}
 .hero .row{display:grid;grid-template-columns:1fr 1fr;gap:4vw;margin-top:4vw;align-items:end}
 .hero p{max-width:46ch;font-size:17px}
+.hero{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.6)),url(-/asset/01a20f89-09e9-7ac2-a239-4afc06d8faf9/bbda056fabf97004a2c250d1431cedbe) center/cover no-repeat;color:#fff}
 .hero .sl{font-stretch:62%;font-weight:700;font-size:clamp(24px,4vw,56px);line-height:1}
+@media(max-width:700px){.hero{background-position:center,40% center}}.hero .btn{background:none;color:#fff;border-color:#fff}.hero .btn:hover{background:#fff;color:#000}.hero .cue{color:#fff}.hero .cue i{background:#fff;border-color:#fff}
 .btn{display:inline-block;background:var(--ink);color:var(--w);border:1px solid var(--ink);padding:13px 26px;text-decoration:none;font-weight:600}
-.btn:hover{background:var(--w);color:var(--ink)}.btn.o{background:none;color:var(--ink)}.btn.o:hover{background:var(--ink);color:var(--w)}
+.btn:hover{background:var(--w);border-color:var(--ink);color:var(--ink)}.btn.o{background:none;color:var(--ink)}.btn.o:hover{background:var(--ink);color:var(--w)}
 section{padding:5vw 4vw;border-bottom:1px solid var(--ink)}
 h2{font-stretch:75%;font-weight:800;font-size:clamp(30px,5vw,64px);line-height:1;margin-bottom:24px}
 .filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
 .filters button{background:none;border:1px solid var(--ink);padding:7px 16px}
 .filters .on{background:var(--ink);color:var(--w)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
-.card{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px;cursor:pointer;background:none;text-align:left;border-top:0;border-left:0}
-.img{aspect-ratio:4/5;background:var(--g2);display:grid;place-items:center;filter:grayscale(1);transition:filter .5s;overflow:hidden;position:relative}
-.img img{width:100%;height:100%;object-fit:cover;display:block}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:clamp(20px,3vw,44px);row-gap:clamp(44px,5vw,68px);border:0}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:40px}}
+.card{border:0;outline:0;padding:0;cursor:pointer;background:none;text-align:left;position:relative;min-width:0;font:inherit;color:inherit;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .35s ease;-webkit-tap-highlight-color:transparent}
+.card:hover{box-shadow:none}
+.card:active{opacity:.85;transition-duration:.1s}
+.card:focus-visible{outline:1px solid var(--ink);outline-offset:6px}
+.img{aspect-ratio:4/5;background:#F5F5F5;display:grid;place-items:center;filter:grayscale(1);transition:filter .5s;overflow:hidden;position:relative}
+.img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),opacity .8s ease}
+.img img.alt{position:absolute;inset:0;opacity:0}
+.card:hover .img img,.card:focus-visible .img img{transform:scale(1.035)}
+.card:hover .img img.alt,.card:focus-visible .img img.alt{opacity:1}
 .img .placeholder{font-size:12px;color:var(--g1);text-align:center;padding:10px}
 .card:hover .img,.card:focus-visible .img,.card.tap .img{filter:none}
-.card b{display:block;margin-top:12px;font-weight:600}.card span{color:var(--g1);font-size:14px}
+.card b{display:block;margin-top:18px;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s cubic-bezier(.2,.7,.2,1);width:fit-content;padding-bottom:3px}.card:hover b,.card:focus-visible b{background-size:100% 1px}.card span{display:block;margin-top:6px;text-align:left;color:var(--g1);font-size:13px;letter-spacing:.04em;opacity:.7;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.card,.img img{transition:none}.card:hover,.card:active{transform:none}.card:hover .img img{transform:none}}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:4vw}
 table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--ink);padding:8px;text-align:center}th{background:var(--ink);color:var(--w);font-weight:500}
-.mask{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:30;display:none}.mask.on{display:block}
+.mask{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;background:rgba(0,0,0,.55);z-index:30;display:none}.mask.on{display:block;animation:fi .25s ease}
+body.lock{overflow:hidden}
+@keyframes fi{from{opacity:0}to{opacity:1}}@keyframes pu{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
 .panel{position:fixed;z-index:31;background:var(--bg);overflow:auto;display:none}
 .panel.on{display:block}
 #cart{top:0;right:0;bottom:0;width:min(440px,100%);padding:24px;border-left:1px solid var(--ink)}
 #modal{inset:4vh 4vw;border:1px solid var(--ink);padding:28px}
 .x{float:right;background:var(--w);border:1px solid var(--ink);width:36px;height:36px;font-size:18px}
 #modal .x{position:absolute;top:12px;right:12px;z-index:5;float:none}
-#modal{position:fixed}
-.pd{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
+#modal.panel{background:var(--w);position:fixed;inset:0;margin:auto;width:min(1020px,92vw);height:fit-content;max-height:min(90vh,820px);padding:40px;overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+#modal.panel.on{animation:pu .3s cubic-bezier(.2,.7,.2,1)}
+#modal .x{top:14px;right:14px;width:40px;height:40px;display:grid;place-items:center;cursor:pointer;line-height:1}
+#modal .x:hover{background:var(--ink);color:var(--w)}
+.pd{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:44px;margin-top:0;align-items:start}
+.pg .main{aspect-ratio:4/5;background:var(--g2);overflow:hidden}.pg .main img{width:100%;height:100%;object-fit:cover;display:block}
+.pg .th{display:flex;gap:8px;margin-top:8px;overflow-x:auto}.pg .th button{flex:0 0 64px;aspect-ratio:4/5;padding:0;border:1px solid var(--g2);background:none;opacity:.6;cursor:pointer}.pg .th button.on{border-color:var(--ink);opacity:1}.pg .th img{width:100%;height:100%;object-fit:cover;display:block}
+.pi h2{font-size:34px!important;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;padding-right:48px}
+.pi .pr{font-size:24px;font-weight:600;margin:12px 0 4px;font-variant-numeric:tabular-nums}.pi .sp{color:var(--g1);font-size:13px;letter-spacing:.04em;margin:0 0 22px}
+.pi .sizes{gap:8px}.pi .sizes button{min-width:52px;height:48px;padding:0;cursor:pointer;transition:background .15s,color .15s}.pi .sizes button:hover{background:var(--g2)}.pi .sizes .on,.pi .sizes .on:hover{background:var(--ac);border-color:var(--ac);color:var(--w)}
+.pi .box{border:0;border-top:1px solid var(--g2);padding:14px 0 0;margin:8px 0 20px}.pi .box input{max-width:140px;padding:8px 10px}
+.pi .btn{display:block;width:100%;text-align:center;box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){#modal.panel.on,.mask.on{animation:none}}
 .sizes{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 16px}
 .sizes button{border:1px solid var(--ink);background:none;min-width:48px;padding:9px}.sizes .on{background:var(--ink);color:var(--w)}
 .box{border:1px solid var(--ink);padding:14px;margin:16px 0}
@@ -59,7 +83,7 @@ input,select,textarea{width:100%;padding:10px;border:1px solid var(--ink);backgr
 #wa{position:fixed;right:18px;bottom:18px;z-index:15;background:var(--ink);color:var(--w);padding:12px 18px;text-decoration:none;font-weight:600}
 footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:14px}
 #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--w);padding:12px 22px;z-index:40;display:none}
-:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
 
 /* إضافات الـ Gallery للصور المتعددة */
 .gallery { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; max-width: 100%; }
@@ -82,9 +106,13 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
 .sc .note{padding-bottom:12px}
 
 @media(max-width:760px){
+  .hero{padding-left:20px;padding-right:20px}
+  .hero h1{font-size:calc((100vw - 40px)/5.6)}
   .hero .row,.inc,.pd{grid-template-columns:1fr}
   nav,#cb,#wa{display:none!important}
-  #modal{inset:0}
+  #modal.panel{width:100vw;height:100dvh;max-height:none;padding:16px 4vw calc(96px + env(safe-area-inset-bottom))}
+  .pd{grid-template-columns:1fr;gap:20px;margin-top:36px}
+  .pi h2{font-size:28px!important}
   #floating-cart-btn{
     position:fixed;
     right:18px;
@@ -115,14 +143,138 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
   }
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style><link rel="stylesheet" href="mobile.css"></head><body>
+</style><link rel="stylesheet" href="mobile.css">
+<script>document.documentElement.classList.add('js')</script>
+<style id="premium">
+:root{--hh:58px}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hh)}
+body{line-height:1.65}
+p{max-width:62ch}
+.hero{min-height:calc(100vh - var(--hh));min-height:calc(100svh - var(--hh));display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(40px,6vw,88px) 60px 28px}
+.hero h1{margin-top:auto}
+.hero .row{margin-top:0;align-items:end;gap:clamp(24px,4vw,64px)}
+.hero .sl{font-size:clamp(28px,4vw,56px);line-height:1.2;letter-spacing:.02em;padding-top:.1em;white-space:nowrap}
+.hero p{line-height:1.6}
+.hero .btn{margin-top:8px}
+.cue{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--g1);text-decoration:none;align-self:center}
+.cue i{display:block;width:1px;height:36px;background:var(--ink);transform-origin:top}
+section{padding:clamp(96px,10vw,150px) 4vw}
+h2{font-size:clamp(30px,4vw,56px);line-height:1.08;letter-spacing:-.01em;margin-bottom:clamp(28px,3vw,44px)}
+nav a,label,.filters button,th{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+label{font-weight:500;color:var(--g1)}
+.filters button{font-weight:500}
+.card span{letter-spacing:.08em}
+.acc{margin-top:28px;border-top:1px solid var(--g2)}
+.acc details{border-bottom:1px solid var(--g2)}
+.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:18px;letter-spacing:0}
+.acc details[open] summary::after{content:"−"}
+.acc .ab{padding:0 0 18px;font-size:14px;line-height:1.65;color:var(--g1)}
+.acc .ab a{color:var(--ink)}
+@media(max-width:760px){
+:root{--hh:112px}
+.hero{padding:40px 20px 24px}
+.hero h1{font-size:calc((100vw - 40px)/5.6)}
+.hero .sl{font-size:clamp(30px,10vw,44px)}
+section{padding:clamp(72px,18vw,96px) 4vw}
+h2{font-size:clamp(28px,8vw,34px)}
+}
+@media(max-width:760px){
+html,body{max-width:100%;overflow-x:hidden}
+header{padding:8px 4vw}
+nav a{min-height:44px;display:flex;align-items:center;justify-content:center;padding:0}
+.hero{min-height:calc(100svh - var(--hh));padding:32px 20px 24px}
+.hero h1{font-size:calc((100vw - 40px)/5.4)}
+.hero .sl{white-space:normal;font-size:clamp(28px,9vw,40px)}
+.hero p{max-width:100%}
+.filters{scrollbar-width:none}.filters::-webkit-scrollbar{display:none}
+.filters button{min-height:44px;flex:0 0 auto}
+.grid{column-gap:14px;row-gap:32px}
+.card b{font-size:12px;overflow-wrap:anywhere}
+.card span{font-size:12px}
+body.lock #floating-cart-btn{display:none!important}
+#modal .x,#cart .x{width:44px;height:44px;font-size:22px}
+#modal .x{position:fixed;top:10px;right:10px;z-index:40}
+#modal.panel{padding:0 0 calc(104px + env(safe-area-inset-bottom));overflow-x:hidden}
+#modal .pd{margin-top:0;gap:18px}
+#modal .pi{padding:0 5vw}
+#modal .pi h2{font-size:26px!important;padding-right:0}
+#modal #add{left:0;right:0;transform:none;bottom:0;width:100%;max-width:none;margin:0;border:0;border-top:1px solid var(--ink);box-shadow:none;padding:16px 4vw calc(16px + env(safe-area-inset-bottom));min-height:56px}
+.acc summary{min-height:48px;padding:14px 0}
+#modal>h2,#modal>p,#modal>.btn{margin-left:5vw;margin-right:5vw;width:auto}
+#modal>h2{padding-top:64px}
+#cart{width:100%;max-width:100%}
+#cart input,#cart select,#cart textarea,#fit input,#support input,#support select,#support textarea{width:100%;font-size:16px;min-height:48px}
+footer{padding-bottom:calc(88px + env(safe-area-inset-bottom));gap:12px}
+footer a{display:inline-block;padding:8px 0;line-height:1.4}
+#toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+</style><style>@media(max-width:760px){.hero .btn{display:inline-block;width:auto!important;padding:13px 30px;font-size:11px;letter-spacing:.25em;text-transform:uppercase}}</style><style>@media(min-width:761px){.hero .row>div:last-child{transform:translateX(80px)}}</style><style>@media(max-width:760px){header{flex-direction:column!important;align-items:center!important;gap:10px!important;padding:16px 16px 10px!important;border-bottom:1px solid #E5E5E5}header .logo{font-size:17px!important;letter-spacing:.45em;margin-right:-.45em}}</style><style id="hero-mobile">@media(max-width:760px){.hero{display:flex;flex-direction:column}.hero h1{margin-top:14svh;margin-bottom:0}.hero .row{display:flex;flex-direction:column;justify-content:flex-start;gap:20px;margin-top:16px;margin-bottom:auto}.hero .row br{display:none}.hero .row p{margin-bottom:20px}.hero .cue{position:static!important;transform:none!important;margin:36px auto auto}.hero{padding-left:28px!important;padding-right:28px!important;text-align:center;align-items:center}.hero h1{font-size:calc((100vw - 56px)/6.6)!important;letter-spacing:.06em;width:100%;text-align:center}.hero .row{align-items:center;width:100%;max-width:300px;margin-left:auto;margin-right:auto}}</style><style>@media(max-width:760px){.hero .sl{font-size:13px!important;letter-spacing:.4em;text-transform:uppercase;font-weight:400;white-space:nowrap}.hero .sl::after{content:'';display:block;width:28px;height:1px;background:currentColor;margin:16px auto 0}.hero .row p{font-size:13px;line-height:1.7;opacity:.85}}</style><style>@media(max-width:760px){header nav{display:flex!important;justify-content:center;gap:26px!important;width:100%}header nav a{font-size:10px!important;letter-spacing:.24em;text-transform:uppercase;color:#666;min-height:32px!important;display:flex;align-items:center}}</style><style id="modal-sheet">@media(max-width:760px){
+html:has(body.lock){overflow:hidden}
+#modal.panel.on{display:block;position:fixed;top:0;right:0;bottom:0;left:0;inset:0;margin:auto;width:calc(100vw - 32px);max-width:420px;height:fit-content;max-height:86vh;max-height:86dvh;border:1px solid var(--ink);border-radius:14px;box-shadow:0 24px 60px -16px rgba(0,0,0,.45);background:#fff;z-index:1000;padding:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;animation:none;transform:none;scrollbar-width:none;-ms-overflow-style:none}
+#modal.panel::-webkit-scrollbar,#modal *::-webkit-scrollbar{display:none;width:0;height:0}
+#modal *{scrollbar-width:none}
+#modal.panel.on .x{position:absolute;top:8px;right:8px;left:auto;z-index:1010;width:40px;height:40px;min-height:40px;border-radius:50%;background:#fff;border:1px solid #E5E5E5;box-shadow:0 2px 8px rgba(0,0,0,.18);display:grid;place-items:center;font-size:20px;line-height:1;padding:0;float:none}
+#modal .pd{display:block;margin:0}
+#modal .pg .main{display:block;width:100%;aspect-ratio:auto;height:38vh;height:38dvh;max-height:300px;object-fit:cover;margin:0;border-radius:14px 14px 0 0}
+#modal .pg .th{display:flex;flex-wrap:nowrap;gap:6px;margin:0;padding:8px 16px;overflow-x:auto}
+#modal .pg .th button{flex:0 0 44px;min-height:0;width:44px}
+#modal .pi{padding:12px 16px 0}
+#modal .pi h2{font-size:24px!important;line-height:1.15;margin:0;padding:0}
+#modal .pi .pr{font-size:18px;margin:8px 0 4px}
+#modal .pi .sp{margin:0 0 14px}
+#modal .pi label{display:block;margin:0 0 8px}
+#modal .pi .sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+#modal .pi .sizes button{width:42px;min-width:42px;height:42px;min-height:42px;padding:0;font-size:14px}
+#modal .pi .box{margin:0 0 16px;padding:14px 0 0}
+#modal .pi .box input{max-width:100%;width:100%}
+#modal .pi .sc-link{margin:0 0 8px;width:100%}
+#modal .acc{margin-top:20px}
+#modal #add{position:sticky;left:auto;right:auto;bottom:0;top:auto;transform:none;display:block;width:calc(100% + 32px);max-width:none;min-height:48px;height:auto;margin:0 -16px;border:0;border-radius:0 0 14px 14px;box-shadow:0 -1px 0 #E5E5E5;padding:14px 16px;z-index:5}
+#modal>h2{padding-top:56px;margin-bottom:12px}
+#modal>p,#modal>h2,#modal>.btn{margin-left:16px;margin-right:16px}
+#modal>.btn{display:block;width:auto;margin-top:16px;margin-bottom:16px}
+#toast{z-index:1100}
+}</style><link rel="stylesheet" href="motion.css"><script src="motion.js" defer></script><style>#modal #add::after{content:" \2192";display:inline-block;margin-left:10px;transition:transform .3s}#modal #add:hover::after{transform:translateX(5px)}</style><style>@media(max-width:760px){#support input,#support select,#support textarea{border:0!important;border-bottom:1px solid #E5E5E5!important;border-radius:0!important;background-color:transparent!important;padding:14px 0!important;font-size:16px!important;width:100%!important}#support :focus{border-bottom-color:#000!important;outline:0}}</style><style id="add-slim">#modal #add{background:#000!important;color:#fff!important;border:1px solid #000!important;border-radius:0!important;padding:14px 24px!important;font-size:11px!important;letter-spacing:.28em!important;text-transform:uppercase!important}</style><style>@media(max-width:760px){#support{padding:80px 24px!important}#support h2{font-size:28px!important}#support label{font-size:11px!important;letter-spacing:.2em;text-transform:uppercase;color:#666!important;margin-top:22px!important}#support .btn{width:auto!important;padding:14px 34px!important;font-size:11px!important}}</style><style id="support-premium">
+#support h2{font-size:30px;font-stretch:100%;font-weight:600;letter-spacing:.02em;line-height:1.15;margin-bottom:20px}
+#support>div p{color:#666;font-size:15px;line-height:1.7;max-width:340px}
+#support form br{display:none}
+#support label{margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#666;font-weight:500}
+#support input,#support select,#support textarea{width:100%;min-height:0;background-color:transparent;border:0;border-bottom:1px solid #E5E5E5;border-radius:0;padding:14px 0;font-size:15px;color:#000;outline:0;box-shadow:none;transition:border-color .3s ease}
+#support input:focus,#support select:focus,#support textarea:focus{border-bottom-color:#000;outline:0}
+#support select{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23000' stroke-width='1'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:12px 8px}
+#support textarea{min-height:120px;resize:vertical}
+#support .btn.send{justify-self:start;padding:14px 34px;font-size:11px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;transition:background .3s ease,color .3s ease,border-color .3s ease}
+#support .btn.send:hover{background:#fff;color:#000;border:1px solid #000}
+@media(min-width:761px){
+#support{display:grid;grid-template-columns:35% minmax(0,620px);column-gap:10%;align-items:start;padding-top:120px;padding-bottom:120px}
+#support form{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;row-gap:0;width:100%}
+#support form>p.hide,#support form>input[type=hidden]{display:none}
+#support label[for=tn]{grid-column:1;grid-row:1}#support #tn{grid-column:1;grid-row:2}
+#support label[for=te]{grid-column:2;grid-row:1}#support #te{grid-column:2;grid-row:2}
+#support label[for=tc]{grid-column:1;grid-row:3;margin-top:28px}#support #tc{grid-column:1;grid-row:4}
+#support label[for=to]{grid-column:2;grid-row:3;margin-top:28px}#support #to{grid-column:2;grid-row:4}
+#support label[for=tm]{grid-column:1/-1;grid-row:5;margin-top:28px}#support #tm{grid-column:1/-1;grid-row:6}
+#support .btn.send{grid-column:1/-1;grid-row:7;margin-top:40px}
+}
+@media(max-width:760px){
+#support{padding:72px 24px}
+#support form{display:flex;flex-direction:column}
+#support form>p.hide{display:none}
+#support label{margin-top:24px}
+#support input,#support select,#support textarea{font-size:16px;min-height:0}
+#support .btn.send{margin-top:36px}
+}
+</style></head><body>
 <header><a class="logo" href="#">EATHER</a>
 <nav><a href="#shop">Shop</a><a href="#fit">Inclusive fit</a><a href="#support">Support</a></nav>
 <button class="hb" id="cb">Cart (0)</button></header>
 
 <div class="hero"><h1>EATHER</h1>
 <div class="row"><div class="sl">Silent Chaos.</div>
-<div><p>Architectural streetwear from Egypt, Built heavy, Cut precise.</p><br><a class="btn" href="#shop">Shop the collection</a></div></div></div>
+<div><p>Architectural streetwear from Egypt, Built heavy, Cut precise.</p><br><a class="btn" href="#shop">Shop the collection</a></div></div>
+<a class="cue" href="#shop" aria-hidden="true" tabindex="-1">Scroll<i></i></a></div>
 
 <section id="shop"><h2>Collection</h2><div class="filters" id="flt"></div><div class="grid" id="grid"></div></section>
 
@@ -132,15 +284,15 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
 <br><button class="btn" id="fgo" type="button">Get my size</button><p class="note" id="fres" aria-live="polite"></p></div></div>
 <div><table><thead><tr><th>Size</th><th>Weight</th></tr></thead><tbody id="ladder"></tbody></table></div></div></section>
 
-<section id="support"><div class="inc"><div><h2>Support</h2><p>Questions about an order, payment or sizing? Send a ticket. You get a reply by email.</p></div>
+<section id="support"><div><h2>Support</h2><p>Questions about an order, payment or sizing? Send a ticket. You get a reply by email.</p></div>
 <form name="support" method="POST" data-netlify="true" netlify-honeypot="bot" id="tf">
 <input type="hidden" name="form-name" value="support"><p class="hide"><input name="bot"></p>
 <label for="tn">Name</label><input id="tn" name="name" required>
 <label for="te">Email</label><input id="te" type="email" name="email" required>
 <label for="tc">Category</label><select id="tc" name="category"><option>Order</option><option>Payment</option><option>Sizing</option><option>Return</option><option>Other</option></select>
-<label for="to">Order number (optional)</label><input id="to" name="order_number">
+<label for="to">Order number</label><input id="to" name="order_number" required>
 <label for="tm">Message</label><textarea id="tm" name="message" rows="4" required></textarea><br><br>
-<button class="btn" type="submit">Send ticket</button></form></div></section>
+<button class="btn send" type="submit">Send ticket</button></form></section>
 
 <footer><b>EATHER</b><span>Cairo, Egypt. Shipping across Egypt.</span><span><a href="shipping.html">Shipping &amp; returns</a> · <a href="size-chart.html">Size chart</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></footer>
 <a id="wa" href="https://wa.me/201158491356" target="_blank" rel="noopener">WhatsApp</a>
@@ -149,18 +301,65 @@ footer{padding:4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap
 <button type="button" id="floating-cart-btn" aria-label="Open Cart">CART <span class="badge" id="float-cart-count">0</span></button>
 
 <div class="mask" id="mask"></div>
-<aside class="panel" id="cart" aria-label="Cart"><button class="x" data-close>×</button><h2 style="font-size:36px">Cart</h2><div id="items"></div><div id="sum"></div>
+<style>
+#cart{padding:0 30px 28px;box-shadow:-18px 0 50px -22px rgba(0,0,0,.28);background:#fff;border-left:0}
+#cart.on{display:flex;flex-direction:column}
+#cart .ch{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E5E5E5;margin:0 -30px 8px;padding:0 20px 0 30px;min-height:68px;position:sticky;top:0;background:#fff;z-index:2}
+#cart .ch h2{font-size:12px!important;font-weight:400;letter-spacing:.35em;text-transform:uppercase;margin:0}
+#cart .ch .x{float:none;position:static;border:0;background:none;width:44px;height:44px;font-size:24px;font-weight:200;cursor:pointer;display:grid;place-items:center;color:#000}
+#cart .ch .x:hover{background:none;opacity:.55}
+#cart #items{font-size:14px}
+#cart #items>p{margin:0;color:#666;font-size:14px;letter-spacing:.04em}
+#cart.empty #items{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center}
+#cart .cs{background:none;border:1px solid #000;color:#000;padding:13px 28px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+#cart .cs:hover{background:#000;color:#fff}
+#cart.empty #pbox,#cart.empty #sum,#cart.empty #co{display:none!important}
+#cart .li{border-bottom:1px solid #E5E5E5;padding:14px 0}
+#cart .li button{border:1px solid #E5E5E5;width:28px;height:28px;background:none;cursor:pointer}
+#cart #pbox{margin:18px 0 8px!important}
+#cart #pbox>div{align-items:flex-end;gap:14px!important}
+#cart #pbox input{border:0;border-bottom:1px solid #000;min-height:0;padding:10px 0;background:none;font-size:14px;letter-spacing:.05em;outline:0}
+#cart #pa{border:0!important;background:none!important;color:#000!important;padding:10px 0!important;font-size:11px;letter-spacing:.25em;text-transform:uppercase;font-weight:500}
+#cart #pa:hover{opacity:.55}
+#cart #sum{margin-top:6px}
+#cart #sum .li{font-size:13px;color:#666}
+#cart #sum .li span:last-child{text-align:right;color:#000}
+#cart #sum .li b{font-weight:600;color:#000;font-size:14px}
+#cart #of label{display:block;margin-top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#666}
+#cart #of input,#cart #of select,#cart #of textarea{border:1px solid #E5E5E5;padding:11px 12px;font-size:16px;margin-top:6px;outline:0}
+#cart #of input:focus,#cart #of select:focus,#cart #of textarea:focus{border-color:#000}
+#cart #co{margin-top:auto;position:sticky;bottom:0;padding:14px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;box-shadow:0 -14px 14px -4px #fff}
+#cart #co::after{content:"→";display:inline-block;margin-left:10px;transition:transform .25s}
+#cart #co:hover::after{transform:translateX(6px)}
+#cart #items:not(:empty)~#co{margin-top:28px}
+#cart #co{display:none!important}
+#cart:not(.empty) #of.hide{display:block!important}
+#cart.empty #of{display:none!important}
+#cart #of{margin-top:22px;padding-top:20px;border-top:1px solid #E5E5E5;display:flex;flex-direction:column;flex:1}
+#cart:not(.empty) #of.hide{display:flex!important}
+#cart #of .dl{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#000;font-weight:500}
+#cart #of input:not([type=hidden]),#cart #of select,#cart #of textarea{width:100%;box-sizing:border-box}
+#cart #of .row2{gap:12px}
+#cart #of .row2>div{min-width:0}
+#cart #of .note{margin-bottom:14px}
+#cart #po{margin-top:auto;position:sticky;bottom:0;width:100%;padding:12px 14px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;box-shadow:0 -14px 14px -4px #fff}
+#cart #po::after{content:"→";display:inline-block;margin-left:10px;transition:transform .25s}
+#cart #po:hover::after{transform:translateX(6px)}
+@media(max-width:600px){#cart #of .row2{grid-template-columns:1fr;gap:0}#cart #of input,#cart #of select,#cart #of textarea{font-size:16px}}
+</style>
+<aside class="panel" id="cart" aria-label="Cart"><div class="ch"><h2>Cart <span id="cc">(0)</span></h2><button class="x" data-close aria-label="Close cart">×</button></div><div id="items"></div><div id="sum"></div>
 <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot" id="of" enctype="multipart/form-data" class="hide">
 <input type="hidden" name="form-name" value="orders"><p class="hide"><input name="bot"></p>
 <input type="hidden" name="order" id="oo"><input type="hidden" name="order_id" id="oi"><input type="hidden" name="subtotal" id="os"><input type="hidden" name="shipping" id="oh"><input type="hidden" name="lines" id="ol"><input type="hidden" name="total" id="ot">
+<div class="dl">Delivery details</div>
 <label for="n1">Full name</label><input id="n1" name="name" required>
 <div class="row2"><div><label for="n2">Email</label><input id="n2" type="email" name="email" required></div><div><label for="n3">Phone / WhatsApp</label><input id="n3" name="phone" required></div></div>
 <label for="n4">Address</label><textarea id="n4" name="address" rows="2" required></textarea>
 <div class="row2"><div><label for="n5">City</label><input id="n5" name="city" required></div><div><label for="zn">Shipping zone</label><select id="zn" name="zone"></select></div></div>
 <label for="pm">Payment method</label><select id="pm" name="payment"></select>
 <div class="box hide" id="pi"><div id="pt"></div><label for="pr">Transfer reference</label><input id="pr" name="reference"><label for="ps">Screenshot of transfer</label><input id="ps" type="file" name="proof" accept="image/*"></div>
-<br><button class="btn" type="submit" style="width:100%">Place order</button>
-<p class="note">We confirm your order by email. Transfers are verified before shipping.</p></form>
+<p class="note">We confirm your order by WhatsApp. Transfers are verified before shipping.</p>
+<button class="btn" type="submit" id="po">Place order</button></form>
 <button class="btn" id="co" style="width:100%;margin-top:14px">Checkout</button></aside>
 <div class="panel" id="modal" role="dialog" aria-modal="true"></div><div id="toast" role="status"></div>
 
@@ -183,7 +382,7 @@ const price=u=>Math.round(u).toLocaleString()+" EGP";
 
 // صورة الغلاف (أول صورة في المصفوفة)
 const thumb=p=>`<div class="img">
-  ${p.imgs && p.imgs.length ? `<img src="${p.imgs[0]}" alt="${p.n}">` : `<div class="placeholder">${p.n}</div>`}
+  ${p.imgs && p.imgs.length ? `<img src="${p.imgs[0]}" alt="${p.n}">${p.imgs.length>1?`<img class="alt" src="${p.imgs[1]}" alt="">`:""}` : `<div class="placeholder">${p.n}</div>`}
 </div>`;
 
 // شريط الصور لما تفتح المنتج
@@ -201,13 +400,16 @@ function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";se
 function grid(){const cs=["All",...new Set(P.map(p=>p.c))];$("#flt").innerHTML=cs.map(c=>`<button class="${c==cat?"on":""}" data-c="${c}">${c}</button>`).join("");
 $("#grid").innerHTML=P.filter(p=>cat=="All"||p.c==cat).map(p=>`<button class="card" data-id="${p.id}">${thumb(p)}<b>${p.n}</b><span>${p.g} · ${price(p.u)}</span></button>`).join("")}
 function open(id){const p=P.find(x=>x.id==id);let sz="M";
-$("#modal").innerHTML=`<button class="x" data-close>×</button><div class="pd"><div>${gallery(p)}</div><div><h2 style="font-size:40px">${p.n}</h2><p>${price(p.u)} · ${p.g} · Oversized, boxy fit</p>
+$("#modal").innerHTML=`<button class="x" data-close>×</button><div class="pd"><div class="pg"><div class="main">${p.imgs&&p.imgs[0]?`<img id="pm0" src="${p.imgs[0]}" alt="${p.n}">`:`<div class="placeholder">${p.n}</div>`}</div>${p.imgs&&p.imgs.length>1?`<div class="th">${p.imgs.map((i,n)=>`<button data-t="${i}" class="${n?"":"on"}" aria-label="Image ${n+1}"><img src="${i}" alt=""></button>`).join("")}</div>`:""}</div><div class="pi"><h2>${p.n}</h2><p class="pr">${price(p.u)}</p><p class="sp">${p.g} · Oversized, boxy fit</p>
 <label>Size</label><div class="sizes">${SZ.map(([s])=>`<button data-s="${s}" class="${s==sz?"on":""}">${s}</button>`).join("")}</div>
 <div class="box"><label for="mw">Weight (kg) for size help</label><input id="mw" type="number" placeholder="85"><p class="note" id="mr"></p></div>
+<a class="btn o sc-link" href="size-chart.html${p.c=="Pants"?"#pants":p.c=="Hoodies"?"#hoodies":""}" style="margin:4px 0 14px">View size chart</a>
 <button class="btn" id="add">Add to cart</button>
-<a class="btn o sc-link" href="size-chart.html${p.c=="Pants"?"#pants":p.c=="Hoodies"?"#hoodies":""}" style="margin-top:18px">View size chart</a></div></div>`;
+<div class="acc"><details><summary>Details</summary><div class="ab">${p.g}</div></details>
+<details><summary>Size &amp; fit</summary><div class="ab">Oversized, boxy fit. Enter your weight in the size help above for a suggested size, or see the <a href="size-chart.html${p.c=="Pants"?"#pants":p.c=="Hoodies"?"#hoodies":""}">full size chart</a>.</div></details>
+<details><summary>Shipping &amp; returns</summary><div class="ab">We deliver across Egypt: 60 to 110 EGP, 1 to 7 working days depending on area. Exchanges and returns within 14 days of delivery for items that are unworn, unwashed and have the original tags. <a href="shipping.html">Read shipping &amp; returns</a>.</div></details></div></div></div>`;
 show("#modal");
-$("#modal").onclick=e=>{const b=e.target.closest("[data-s]");if(b){sz=b.dataset.s;document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x==b))}
+$("#modal").onclick=e=>{const tb=e.target.closest("[data-t]");if(tb){$("#pm0").src=tb.dataset.t;document.querySelectorAll("[data-t]").forEach(x=>x.classList.toggle("on",x==tb))}const b=e.target.closest("[data-s]");if(b){sz=b.dataset.s;document.querySelectorAll("[data-s]").forEach(x=>x.classList.toggle("on",x==b))}
 if(e.target.id=="add"){const k=cart.find(i=>i.id==id&&i.s==sz);k?k.q++:cart.push({id,s:sz,q:1});upd();hide();toast("Added to cart")}};
 $("#mw").oninput=e=>{$("#mr").textContent=e.target.value?"We suggest size "+rec(+e.target.value,0):""}}
 const total=()=>cart.reduce((a,i)=>a+P.find(p=>p.id==i.id).u*i.q,0);
@@ -219,8 +421,9 @@ const z=zone(),sh=cart.length?z.c:0;$("#sum").innerHTML=cart.length?`<div class=
 $("#oo").value=cart.map(i=>`${P.find(p=>p.id==i.id).n} / ${i.s} x${i.q}`).join("; ");$("#ot").value=`${total()+sh} EGP`;$("#os").value=total();$("#oh").value=sh;$("#ol").value=cart.map(i=>{const p=P.find(p=>p.id==i.id);return `${p.n}|${i.s}|${i.q}|${p.u}`}).join(";");if(!$("#oi").value)$("#oi").value="EA-"+new Date().toISOString().slice(2,10).replace(/-/g,"")+"-"+Math.floor(1000+Math.random()*9000)}
 function pays(){$("#pm").innerHTML=Object.entries(PAY).filter(()=>1).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join("");pm()}
 function pm(){const v=PAY[$("#pm").value];$("#pi").classList.toggle("hide",!v.t);$("#pt").innerHTML=v.t;$("#pr").required=$("#ps").required=!!v.t}
-function show(s){$(s).classList.add("on");$("#mask").classList.add("on")}
-function hide(){document.querySelectorAll(".panel,.mask").forEach(e=>e.classList.remove("on"))}
+function show(s){$(s).classList.add("on");$("#mask").classList.add("on");document.body.classList.add("lock")}
+function hide(){document.querySelectorAll(".panel,.mask").forEach(e=>e.classList.remove("on"));document.body.classList.remove("lock")}
+document.addEventListener("keydown",e=>{if(e.key=="Escape")hide()});
 $("#zn").innerHTML=Object.keys(ZONES).map(z=>`<option>${z}</option>`).join("");
 $("#ladder").innerHTML=SZ.map(([s,r])=>`<tr><td>${s}</td><td>${r} kg</td></tr>`).join("");
 $("#wa").href="https://wa.me/"+WA;
@@ -252,11 +455,16 @@ send($("#tf"),()=>toast("Ticket sent. We will reply by email."));
 grid();upd();
 </script>
 <script src="promo.js"></script>
+<script>
+/* Cart drawer: display-only state (empty class, count, continue button) */
+(function(){const b=window.upd;window.upd=function(){b.apply(this,arguments);const c=document.getElementById("cart"),n=cart.reduce((a,i)=>a+i.q,0);c.classList.toggle("empty",!cart.length);if(cart.length&&!document.getElementById("pm").options.length)pays();document.getElementById("cc").textContent="("+n+")";if(!cart.length){const it=document.getElementById("items");if(!it.querySelector(".cs"))it.insertAdjacentHTML("beforeend",'<button type="button" class="cs" id="cs">Continue shopping</button>')}};document.addEventListener("click",e=>{if(e.target.closest("#cs")){hide();const s=document.getElementById("shop");if(s)s.scrollIntoView({behavior:"smooth"})}});window.upd()})();
+</script>
 
 <!-- Vercel Speed Insights (تهيئة لصفحات HTML الثابتة) -->
 <script>
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+
 </body>
 </html>
