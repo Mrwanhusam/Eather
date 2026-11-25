@@ -44,4 +44,35 @@ th:last-child,td:last-child{padding-right:0}
 .ft p{color:var(--g);font-size:11px;margin-top:8px;line-height:1.7}
 @media(max-width:560px){body{padding:16px 10px}.r{padding:36px 22px 28px}.logo{font-size:22px}.cols{grid-template-columns:1fr;gap:18px}.tot{width:100%}th:nth-child(4),td:nth-child(4){display:none}.pay{flex-direction:column;align-items:flex-start}.pay .due{text-align:left}}
 @page{size:A5;margin:10mm}
-@media print{body{background:#fff;padding:0}.r{box-shadow:none;pad
+@media print{body{background:#fff;padding:0}.r{box-shadow:none;padding:0;max-width:none;animation:none}.bar{display:none}.pay{-webkit-print-color-adjust:exact;print-color-adjust:exact}.pill.p{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(prefers-reduced-motion:reduce){.r{animation:none}}
+</style></head><body>
+<div class="bar"><button class="pb" onclick="print()">Save as PDF</button><button class="pb d" onclick="print()">Print receipt</button></div>
+<div class="r" id="r"></div>
+<script>
+/* ===== EDIT ===== */
+const LOGO="";
+const PHONE="+20 115 849 1356";
+const NOTE="Exchanges within 14 days with the receipt and unworn items.";
+/* ================ */
+const q=new URLSearchParams(location.search),g=k=>q.get(k)||"";
+const e=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=t=>parseFloat(String(t).replace(/[^\d.]/g,""))||0;
+const m=n=>Math.round(Number(n)||0).toLocaleString("en")+" EGP";
+const PAY={cod:"Cash on delivery",insta:"InstaPay",wallet:"E-wallet"};
+const logo=LOGO?`<img src="${e(LOGO)}" alt="EATHER">`:"EATHER";
+if(!g("id")){document.getElementById("r").innerHTML="<p>Open this page from the Receipt link in your admin page.</p>"}
+else{
+const rows=g("lines").split(";").filter(Boolean).map(l=>{const[a,s,n,p]=l.split("|");return`<tr><td>${e(a)}</td><td>${e(s)}</td><td class="n">${e(n)}</td><td class="n">${m(p)}</td><td class="n">${m(p*n)}</td></tr>`}).join("");
+const cod=g("pay")=="cod",pm=PAY[g("pay")]||g("pay"),total=m(num(g("total")));
+document.title="EATHER Receipt "+g("id");
+document.getElementById("r").innerHTML=`
+<div class="top"><div><div class="logo">${logo}</div><div class="sl">Silent Chaos.</div></div>
+<div class="meta"><span class="lab">Receipt</span><div class="no">${e(g("id"))}</div><div class="dt">${e(g("date")||new Date().toLocaleDateString("en-GB"))}</div><span class="pill ${cod?"":"p"}">${cod?"Due on delivery":"Paid"}</span></div></div>
+<div class="cols"><div><span class="lab">Customer</span>${e(g("name"))}<br>${e(g("phone"))}</div>
+<div><span class="lab">Ship to</span>${e(g("addr"))}<br>${e(g("city"))}${g("zone")?" · "+e(g("zone")):""}</div></div>
+<table><tr><th>Item</th><th>Size</th><th class="n">Qty</th><th class="n">Price</th><th class="n">Total</th></tr>${rows}</table>
+<div class="tot"><div><span>Subtotal</span><span>${m(g("sub")||0)}</span></div><div><span>Shipping</span><span>${m(g("ship")||0)}</span></div><div class="g"><span>Total</span><span>${total}</span></div></div>
+<div class="pay"><div><span class="lab">Payment</span><div class="v">${e(pm)}${g("ref")?" · Ref "+e(g("ref")):""}</div></div><div class="due"><span class="lab">${cod?"Amount due":"Status"}</span><b>${cod?total:"Paid"}</b></div></div>
+<div class="ft"><div class="ty">Thank you for choosing EATHER</div><p>${e(NOTE)}<br>WhatsApp ${e(PHONE)}</p></div>`}
+</script></body></html>
