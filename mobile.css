@@ -38,8 +38,8 @@ button,.btn{min-height:44px}
   }
   #floating-cart-btn:active{transform:scale(0.97)}
   #floating-cart-btn .badge{
-    background:var(--w);
-    color:var(--ink);
+    background:var(--ac);
+    color:var(--w);
     padding:2px 7px;
     font-size:12px;
     font-weight:800;
@@ -55,7 +55,7 @@ button,.btn{min-height:44px}
   section{padding:11vw 4vw}
   h2{font-size:34px}
   .grid{grid-template-columns:1fr 1fr}
-  .card{padding:8px}.card b{font-size:14px}.card span{font-size:12px}
+  .card b{font-size:11px}.card span{font-size:12px}
   .filters{flex-wrap:nowrap;overflow-x:auto;margin-right:-4vw;padding:0 4vw 6px 0}
   .filters button{white-space:nowrap;min-height:40px}
   #cart{width:100%;border-left:0;padding:18px 4vw calc(24px + env(safe-area-inset-bottom))}
