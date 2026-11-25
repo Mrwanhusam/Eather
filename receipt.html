@@ -72,7 +72,7 @@ document.getElementById("r").innerHTML=`
 <div class="cols"><div><span class="lab">Customer</span>${e(g("name"))}<br>${e(g("phone"))}</div>
 <div><span class="lab">Ship to</span>${e(g("addr"))}<br>${e(g("city"))}${g("zone")?" · "+e(g("zone")):""}</div></div>
 <table><tr><th>Item</th><th>Size</th><th class="n">Qty</th><th class="n">Price</th><th class="n">Total</th></tr>${rows}</table>
-<div class="tot"><div><span>Subtotal</span><span>${m(g("sub")||0)}</span></div><div><span>Shipping</span><span>${m(g("ship")||0)}</span></div><div class="g"><span>Total</span><span>${total}</span></div></div>
+<div class="tot"><div><span>Subtotal</span><span>${m(g("sub")||0)}</span></div>${(()=>{const d=Math.round(num(g("disc")||g("discount"))||(num(g("sub"))+num(g("ship"))-num(g("total"))));const c=g("code")||g("promo");return d>0?`<div><span>Discount${c?" ("+e(c)+")":""}</span><span>− ${m(d)}</span></div>`:""})()}<div><span>Shipping</span><span>${m(g("ship")||0)}</span></div><div class="g"><span>Total</span><span>${total}</span></div></div>
 <div class="pay"><div><span class="lab">Payment</span><div class="v">${e(pm)}${g("ref")?" · Ref "+e(g("ref")):""}</div></div><div class="due"><span class="lab">${cod?"Amount due":"Status"}</span><b>${cod?total:"Paid"}</b></div></div>
 <div class="ft"><div class="ty">Thank you for choosing EATHER</div><p>${e(NOTE)}<br>WhatsApp ${e(PHONE)}</p></div>`}
 </script></body></html>
