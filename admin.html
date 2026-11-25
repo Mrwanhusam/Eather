@@ -177,74 +177,70 @@ charts();
 #pa:hover{background:#fff;color:#000}
 #pr{display:none}
 @media print{
-@page{size:A4;margin:0}
+@page{size:A5;margin:10mm}
 html,body{margin:0;padding:0;background:#fff}
 body>*:not(#pr){display:none!important}
-#pr{display:block;font:400 13px/1.55 Archivo,Arial,sans-serif;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.rc{height:297mm;display:flex;flex-direction:column;page-break-after:always;break-after:page;overflow:hidden}
-.rc:last-child{page-break-after:auto;break-after:auto}
-.hd{background:#000;color:#fff;padding:16mm 16mm 12mm;display:flex;justify-content:space-between;align-items:flex-end}
-.hd .l{font-stretch:125%;font-weight:800;font-size:38px;letter-spacing:.36em;line-height:1}
-.hd .s{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#999;margin-top:12px}
-.hd .r{text-align:right;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#999}
-.hd .r b{display:block;color:#fff;font-size:13px;letter-spacing:.3em;margin-top:6px}
-.bd{padding:12mm 16mm 0;flex:1;display:flex;flex-direction:column}
-.lb{display:block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#777;margin-bottom:6px;font-weight:500}
-.mt{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;padding-bottom:9mm;border-bottom:1px solid #000}
-.mt .v{font-size:15px;font-weight:600;letter-spacing:.02em}
-.pl{display:inline-block;border:1px solid #000;border-radius:99px;padding:3px 12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
-.pl.p{background:#000;color:#fff}
-.ad{display:grid;grid-template-columns:1fr 1fr;gap:8mm;padding:9mm 0;border-bottom:1px solid #E2E2E2;font-size:13px;line-height:1.75}
-.ad .n{font-size:15px;font-weight:600}
-#pr table{width:100%;border-collapse:collapse;margin-top:9mm}
-#pr th{text-align:left;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#777;font-weight:500;padding:0 0 10px;border-bottom:1px solid #000}
-#pr td{padding:14px 0;border-bottom:1px solid #E2E2E2;font-size:13px}
-#pr td:first-child{font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-#pr .c{text-align:center;width:18%}#pr .x{text-align:right;width:14%}
-#pr .dc td{color:#555;font-weight:400;letter-spacing:.04em;text-transform:none;font-style:italic}
-.tt{margin-top:9mm;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:7mm 8mm}
-.tt span:first-child{font-size:10px;letter-spacing:.3em;text-transform:uppercase}
-.tt span:last-child{font-size:30px;font-weight:300;letter-spacing:-.01em}
-.py{margin-top:6mm;display:flex;justify-content:space-between;align-items:flex-end;padding:6mm 0;border-bottom:1px solid #E2E2E2}
-.py .v{font-size:14px;font-weight:600}
-.py .r{text-align:right}
-.ft{margin-top:auto;padding:10mm 16mm 14mm;text-align:center;border-top:1px solid #E2E2E2}
-.ft b{font-size:10px;letter-spacing:.36em;text-transform:uppercase}
-.ft p{font-size:10px;color:#777;margin-top:8px;line-height:1.8}
+#pr{display:block;font:400 12px/1.55 Archivo,Arial,sans-serif;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#pr .rc{page-break-after:always;break-after:page}
+#pr .rc:last-child{page-break-after:auto;break-after:auto}
+#pr .top{position:static;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:0 0 22px;border-bottom:1px solid #E5E5E5;background:none}
+#pr .logo{font-stretch:125%;font-weight:800;font-size:26px;letter-spacing:.34em;line-height:1}
+#pr .sl{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:#666;margin-top:10px}
+#pr .meta{text-align:right}
+#pr .lab{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#666;font-weight:500;margin-bottom:6px}
+#pr .no{font-size:14px;font-weight:600;letter-spacing:.04em}
+#pr .dt{color:#666;font-size:11px;margin-top:2px}
+#pr .pill{display:inline-block;margin-top:10px;border:1px solid #000;border-radius:999px;padding:3px 12px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+#pr .pill.p{background:#000;color:#fff}
+#pr .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E5E5E5;line-height:1.7;height:auto}
+#pr table{width:100%;border-collapse:collapse;margin-top:18px}
+#pr th{text-align:left;font-weight:500;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#666;padding:0 8px 10px 0;border-bottom:1px solid #E5E5E5}
+#pr td{padding:13px 8px 13px 0;border-bottom:1px solid #E5E5E5;font-variant-numeric:tabular-nums}
+#pr td:first-child{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+#pr .n{text-align:right;white-space:nowrap}
+#pr th:last-child,#pr td:last-child{padding-right:0}
+#pr .tot{margin:16px 0 0 auto;width:58%;font-size:12px;font-weight:400}
+#pr .tot div{display:flex;justify-content:space-between;padding:4px 0;color:#666}
+#pr .tot div span:last-child{color:#000}
+#pr .tot .g{border-top:1px solid #000;margin-top:8px;padding-top:12px;color:#000;align-items:baseline}
+#pr .tot .g span:first-child{font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+#pr .tot .g span:last-child{font-size:22px;font-weight:300}
+#pr .pay{margin-top:24px;padding:16px 18px;background:#F7F7F7;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+#pr .due{text-align:right}
+#pr .due b{display:block;font-size:16px;font-weight:600;margin-top:2px}
+#pr .ft{margin-top:30px;padding-top:18px;border-top:1px solid #E5E5E5;text-align:center}
+#pr .ty{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:600}
+#pr .ft p{color:#666;font-size:10px;margin-top:6px;line-height:1.7}
 }
 </style>
 <div id="pr"></div>
 <script id="admin-print-js">
 (function(){
 const PHONE="+20 115 849 1356",NOTE="Exchanges within 14 days with the receipt and unworn items.";
-const d=x=>new Date(x).toLocaleDateString("en-GB",{timeZone:"Africa/Cairo",day:"numeric",month:"long",year:"numeric"});
-function rows(t){
-let code="";const out=[];
-String(t||"").split(/,|\n|\+/).map(s=>s.trim()).filter(Boolean).forEach(s=>{
-const c=s.match(/Code\s+(\S+)\s*\((.*?)\)/i);if(c){code=c[1]+(c[2]?" · "+c[2]:"");s=s.replace(c[0],"").trim();if(!s)return}
-const m=s.match(/^(.*?)\s*\/\s*([^\s\/]+)\s*[x×]\s*(\d+)/i);
-out.push(m?[m[1],m[2],m[3]]:[s,"—","1"]);
-});
-return out.map(r=>`<tr><td>${e(r[0])}</td><td class="c">${e(r[1])}</td><td class="x">${e(r[2])}</td></tr>`).join("")+(code?`<tr class="dc"><td colspan="2">Discount code ${e(code)}</td><td class="x">Applied</td></tr>`:"");
+const m=n=>Math.round(Number(n)||0).toLocaleString("en")+" EGP";
+function one(o){
+let q;try{q=new URL(o.receipt,location.href).searchParams}catch(x){q=new URLSearchParams()}
+const g=k=>q.get(k)||"";
+const pay=g("pay")||o.pay,cod=pay=="cod",pm=PAY[pay]||pay;
+let rows=g("lines").split(";").filter(Boolean).map(l=>{const[a,s,n,p]=l.split("|");return`<tr><td>${e(a)}</td><td>${e(s)}</td><td class="n">${e(n)}</td><td class="n">${m(p)}</td><td class="n">${m(p*n)}</td></tr>`}).join("");
+if(!rows)rows=`<tr><td colspan="5">${e(o.items)}</td></tr>`;
+const total=m(num(g("total")||o.total)),sub=num(g("sub")),ship=num(g("ship"));
+const dsc=Math.round(num(g("disc")||g("discount"))||(sub?sub+ship-num(g("total")||o.total):0)),code=g("code")||g("promo")||((String(o.items).match(/Code (\S+) \(/)||[])[1]||"");
+const dt=g("date")||new Date(o.date).toLocaleString("en-GB",{timeZone:"Africa/Cairo",dateStyle:"short",timeStyle:"short"}).replace(",","");
+return`<div class="rc">
+<div class="top"><div><div class="logo">EATHER</div><div class="sl">Silent Chaos.</div></div>
+<div class="meta"><span class="lab">Receipt</span><div class="no">${e(g("id")||o.id)}</div><div class="dt">${e(dt)}</div><span class="pill ${cod?"":"p"}">${cod?"Due on delivery":"Paid"}</span></div></div>
+<div class="cols"><div><span class="lab">Customer</span>${e(g("name")||o.name)}<br>${e(g("phone")||o.phone)}</div>
+<div><span class="lab">Ship to</span>${e(g("addr")||o.address)}<br>${e(g("city")||o.city)}${g("zone")?" · "+e(g("zone")):""}</div></div>
+<table><tr><th>Item</th><th>Size</th><th class="n">Qty</th><th class="n">Price</th><th class="n">Total</th></tr>${rows}</table>
+<div class="tot">${sub?`<div><span>Subtotal</span><span>${m(sub)}</span></div>`:""}${dsc>0?`<div><span>Discount${code?" ("+e(code)+")":""}</span><span>− ${m(dsc)}</span></div>`:""}${sub||ship?`<div><span>Shipping</span><span>${m(ship)}</span></div>`:""}<div class="g"><span>Total</span><span>${total}</span></div></div>
+<div class="pay"><div><span class="lab">Payment</span>${e(pm)}${(g("ref")||o.ref)?" · Ref "+e(g("ref")||o.ref):""}</div><div class="due"><span class="lab">${cod?"Amount due":"Status"}</span><b>${cod?total:"Paid"}</b></div></div>
+<div class="ft"><div class="ty">Thank you for choosing EATHER</div><p>${e(NOTE)}<br>WhatsApp ${e(PHONE)}</p></div></div>`;
 }
 function btn(){
 const s=document.querySelector(".stats");if(!s||document.getElementById("pa"))return;
 s.insertAdjacentHTML("beforeend",'<div class="st st-pa"><button id="pa">Print All Receipts</button></div>');
-document.getElementById("pa").onclick=printAll;
-}
-function printAll(){
-if(!O.length){alert("No orders to print.");return}
-document.getElementById("pr").innerHTML=O.map(o=>{const cod=o.pay=="cod";return`<div class="rc">
-<div class="hd"><div><div class="l">EATHER</div><div class="s">Silent Chaos.</div></div><div class="r">Receipt<b>${e(o.id||"—")}</b></div></div>
-<div class="bd">
-<div class="mt"><div><span class="lb">Date</span><div class="v">${d(o.date)}</div></div><div><span class="lb">Order</span><div class="v">${e(o.id||"—")}</div></div><div><span class="lb">Status</span><span class="pl ${cod?"":"p"}">${cod?"Due on delivery":"Paid"}</span></div></div>
-<div class="ad"><div><span class="lb">Customer</span><div class="n">${e(o.name)}</div>${e(o.phone)}</div><div><span class="lb">Ship to</span><div class="n">${e(o.city)}</div>${e(o.address)}</div></div>
-<table><tr><th>Item</th><th class="c">Size</th><th class="x">Qty</th></tr>${rows(o.items)}</table>
-<div class="tt"><span>Total</span><span>${e(o.total)}</span></div>
-<div class="py"><div><span class="lb">Payment</span><div class="v">${e(PAY[o.pay]||o.pay)}${o.ref?" · Ref "+e(o.ref):""}</div></div><div class="r"><span class="lb">${cod?"Amount due":"Status"}</span><div class="v">${cod?e(o.total):"Paid"}</div></div></div>
-</div>
-<div class="ft"><b>Thank you for choosing EATHER</b><p>${e(NOTE)}<br>WhatsApp ${e(PHONE)}</p></div></div>`}).join("");
-print();
+document.getElementById("pa").onclick=()=>{if(!O.length){alert("No orders to print.");return}document.getElementById("pr").innerHTML=O.map(one).join("");print()};
 }
 const d1=draw;draw=function(){d1();btn()};
 btn();
